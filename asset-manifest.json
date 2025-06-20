@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Oxymoron82/Movies/static/css/main.ab524480.css",
-    "main.js": "/Oxymoron82/Movies/static/js/main.ef7c0bab.js",
-    "static/js/453.5558d6fa.chunk.js": "/Oxymoron82/Movies/static/js/453.5558d6fa.chunk.js",
-    "index.html": "/Oxymoron82/Movies/index.html",
-    "main.ab524480.css.map": "/Oxymoron82/Movies/static/css/main.ab524480.css.map",
-    "main.ef7c0bab.js.map": "/Oxymoron82/Movies/static/js/main.ef7c0bab.js.map",
-    "453.5558d6fa.chunk.js.map": "/Oxymoron82/Movies/static/js/453.5558d6fa.chunk.js.map"
+    "main.css": "/Movies/static/css/main.ab524480.css",
+    "main.js": "/Movies/static/js/main.6d4efb3c.js",
+    "static/js/453.5558d6fa.chunk.js": "/Movies/static/js/453.5558d6fa.chunk.js",
+    "index.html": "/Movies/index.html",
+    "main.ab524480.css.map": "/Movies/static/css/main.ab524480.css.map",
+    "main.6d4efb3c.js.map": "/Movies/static/js/main.6d4efb3c.js.map",
+    "453.5558d6fa.chunk.js.map": "/Movies/static/js/453.5558d6fa.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ab524480.css",
-    "static/js/main.ef7c0bab.js"
+    "static/js/main.6d4efb3c.js"
   ]
 }
