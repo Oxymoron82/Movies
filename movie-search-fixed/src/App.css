@@ -1,12 +1,13 @@
+/* Общие стили */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(
-    to bottom right,
-    #21012e,
-    #726b77
-  ); /* Тёмно-фиолетовый → светлее */
+  background: linear-gradient(to bottom right, #21012e, #726b77);
   color: #fff;
   min-height: 100vh;
 }
@@ -16,6 +17,7 @@ body {
   padding: 30px;
 }
 
+/* Поля ввода и кнопки */
 input {
   padding: 10px;
   border-radius: 6px;
@@ -38,21 +40,7 @@ button:hover {
   background-color: #ba68c8;
 }
 
-p {
-  margin-top: 10px;
-}
-
-.movie-card {
-  width: 200px;
-  padding: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
+/* Карточки фильмов */
 .movie-card {
   width: 200px;
   cursor: pointer;
@@ -64,6 +52,11 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.03);
 }
 
 .movie-card h3,
@@ -78,4 +71,82 @@ p {
   border-radius: 4px;
   object-fit: cover;
   margin-bottom: 10px;
+}
+
+/* Сетка карточек */
+.movies-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  padding: 20px;
+}
+
+/* Стили страницы подробностей фильма */
+.movie-details-container {
+  color: white;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.movie-details-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.movie-details-poster {
+  width: 300px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.movie-details-text {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* Текстовые параграфы */
+p {
+  margin-top: 10px;
+}
+
+/* Адаптация под мобильные экраны */
+@media (max-width: 768px) {
+  .movie-details-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .movie-details-poster {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .movie-details-text {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .movies-container {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+
+  .movie-card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  button {
+    width: 100%;
+  }
 }

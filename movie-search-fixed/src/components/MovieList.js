@@ -9,6 +9,13 @@ function MovieList({ movies }) {
       ))}
     </div>
   );
+
+  <div className="movies-container">
+  {movies.map((movie) => (
+    <MovieCard key={movie.imdbID} movie={movie} />
+  ))}
+</div>
+
 }
 
 export default MovieList;

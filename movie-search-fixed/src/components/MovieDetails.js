@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 function MovieDetails() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
@@ -11,20 +12,28 @@ function MovieDetails() {
       .then((data) => setMovie(data));
   }, [id]);
 
-  if (!movie) return <p>Загрузка...</p>;
+  if (!movie) return <p style={{ textAlign: 'center' }}>Загрузка...</p>;
 
   return (
-    <div style={{ color: 'white', padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
-      <h2>{movie.Title} ({movie.Year})</h2>
-      <img
-        src={movie.Poster !== 'N/A' ? movie.Poster : 'https://via.placeholder.com/300x450'}
-        alt={movie.Title}
-        style={{ width: '300px', float: 'left', marginRight: '20px', borderRadius: '8px' }}
-      />
-      <p><strong>Жанр:</strong> {movie.Genre}</p>
-      <p><strong>Режиссёр:</strong> {movie.Director}</p>
-      <p><strong>Актёры:</strong> {movie.Actors}</p>
-      <p><strong>Сюжет:</strong> {movie.Plot}</p>
+    <div className="movie-details-container">
+      <button className="back-button" onClick={() => navigate('/')}>
+        ← Назад
+      </button>
+
+      <div className="movie-details-content">
+        <img
+          src={movie.Poster !== 'N/A' ? movie.Poster : 'https://via.placeholder.com/300x450'}
+          alt={movie.Title}
+          className="movie-details-poster"
+        />
+        <div className="movie-details-text">
+          <h2>{movie.Title} ({movie.Year})</h2>
+          <p><strong>Жанр:</strong> {movie.Genre}</p>
+          <p><strong>Режиссёр:</strong> {movie.Director}</p>
+          <p><strong>Актёры:</strong> {movie.Actors}</p>
+          <p><strong>Сюжет:</strong> {movie.Plot}</p>
+        </div>
+      </div>
     </div>
   );
 }
