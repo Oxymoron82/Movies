@@ -12,12 +12,12 @@ function MovieDetails() {
       .then((data) => setMovie(data));
   }, [id]);
 
-  if (!movie) return <p style={{ textAlign: 'center' }}>Загрузка...</p>;
+  if (!movie) return <p style={{ textAlign: 'center' }}>Loading...</p>;
 
   return (
     <div className="movie-details-container">
       <button className="back-button" onClick={() => navigate('/')}>
-        ← Назад
+        ← Back
       </button>
 
       <div className="movie-details-content">
@@ -28,10 +28,10 @@ function MovieDetails() {
         />
         <div className="movie-details-text">
           <h2>{movie.Title} ({movie.Year})</h2>
-          <p><strong>Жанр:</strong> {movie.Genre}</p>
-          <p><strong>Режиссёр:</strong> {movie.Director}</p>
-          <p><strong>Актёры:</strong> {movie.Actors}</p>
-          <p><strong>Сюжет:</strong> {movie.Plot}</p>
+          <p><strong>Genre:</strong> {movie.Genre}</p>
+          <p><strong>Director:</strong> {movie.Director}</p>
+          <p><strong>Actors:</strong> {movie.Actors}</p>
+          <p><strong>Plot:</strong> {movie.Plot}</p>
         </div>
       </div>
     </div>

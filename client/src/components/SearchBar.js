@@ -9,7 +9,7 @@ function SearchBar({ searchQuery, setSearchQuery, setMovies }) {
 
     setLoading(true);
     setError('');
-    setMovies([]); // очистим прошлый список
+    setMovies([]); // clean previous list
 
     const apiKey = '60652a4d';
 
@@ -20,10 +20,10 @@ function SearchBar({ searchQuery, setSearchQuery, setMovies }) {
       if (data.Response === 'True') {
         setMovies(data.Search);
       } else {
-        setError('Фильмы не найдены');
+        setError('Movies are not found');
       }
     } catch (err) {
-      setError('Произошла ошибка при загрузке');
+      setError('An error occurred while loading movies');
     }
 
     setLoading(false);
@@ -37,9 +37,9 @@ function SearchBar({ searchQuery, setSearchQuery, setMovies }) {
         onChange={(e) => setSearchQuery(e.target.value)}
         placeholder="Название фильма"
       />
-      <button onClick={handleSearch}>Найти</button>
+      <button onClick={handleSearch}>Search</button>
 
-      {loading && <p>🔄 Загрузка...</p>}
+      {loading && <p>🔄 Loading...</p>}
       {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
   );

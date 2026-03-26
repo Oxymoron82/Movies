@@ -19,7 +19,7 @@ function App() {
             path="/"
             element={
               <>
-                <h1>Поиск фильмов 🎬</h1>
+                <h1>Movie search 🎬</h1>
 
                 <div style={{ marginBottom: '20px' }}>
 
