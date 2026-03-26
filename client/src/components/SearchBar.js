@@ -35,7 +35,7 @@ function SearchBar({ searchQuery, setSearchQuery, setMovies }) {
         type="text"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
-        placeholder="Название фильма"
+        placeholder="Movie title"
       />
       <button onClick={handleSearch}>Search</button>
 
